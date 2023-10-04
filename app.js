@@ -83,25 +83,18 @@ chatbotToggler.addEventListener("click", () => document.body.classList.toggle("s
 
 
 
-// this is for animation
+let mouseCursor = document.querySelector(".cursor");
+let body = document.querySelectorAll("body");
+window.addEventListener("mousemove", cursor);
 
-// const observer = new IntersectionObserver((entries) => {
-//     entries.forEach((entry) => {
-//         console.log(entry)
-//         if (entry.isIntersecting) {
-//             entry.target.classList.add('show');
-//         } else {
-//             entry.target.classList.remove('show');
-//         }
-//     });
-
-// });
+function cursor(e) {
+    mouseCursor.style.top = e.pageY + "px";
+    mouseCursor.style.left = e.pageX + "px";
+}
 
 
 
 
-// const hiddenElement = document.querySelector('.hidden');
-// hiddenElement.forEach((el) => observer.observe(el));
 
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
@@ -146,10 +139,6 @@ gsap.to(".reveal2", {
         end: "top 80%%",
 
 
-        // markers:    {
-        //         startcolor:"purple",
-        //         endcolor:"red",
-        //         fontsize:"1rem",
-        // },
+        
     }
 })
